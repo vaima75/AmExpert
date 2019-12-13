@@ -1,37 +1,50 @@
-## Welcome to GitHub Pages
+## Amex Challenge: AmExpert
 
-You can use the [editor on GitHub](https://github.com/vaima75/AmExpert/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+AmExpert 2018 - Machine Learning Hackathon, organized by American Express and Analytics Vidhya, an opportunity to showcase analytical abilities and talent.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Problem Statement
 
-### Markdown
+Recent years have witnessed a surge in the number of internet savvy users. Companies in the financial services domain leverage this huge internet traffic arriving at their interface by strategically placing ads/promotions for cross selling of various financial products on a plethora of web pages. The digital analytics unit of Best Cards Company uses cutting edge data science and machine learning for successful promotion of its valuable card products. They believe that a predictive model that forecasts whether a session involves a click on the ad/promotion would help them extract the maximum out of the huge clickstream data that they have collected. You are hired as a consultant to build an efficient model to predict whether a user will click on an ad or not, given the following features:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+-	Clickstream data/train data for duration: (2nd July 2017 – 7th July 2017)
+-	Test data for duration: (8th July 2017 – 9th July 2017)
+-	User features (demographics, user behaviour/activity, buying power etc.)
+-	Historical transactional data of the previous month with timestamp info (28th May 2017– 1st July 2017)
+	(User views/interest registered)
+-	Ad features (product category, webpage, campaign for ad etc.)
+-	Date time features (exact timestamp of the user session)
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+### Data
+#### Train
 
-- Bulleted
-- List
+| Variable	| Definition	|
+| ------------- |:-------------:|
+| session_id	| Unique ID for a session |
+| DateTime	| Timestamp	|
+| user_id	| Unique ID for user	|
+| product	| Product ID	|
+| campaign_id	| Unique ID for ad campaign	|
+| webpage_id	| Webpage ID at which the ad is displayed	|
+| product_category_1	| Product category 1 (Ordered)	|
+| product_category_2	| Product category 2	|
+| user_group_id	| Customer segmentation ID	|
+| gender	| Gender of the user	|
+| age_level	| Age level of the user	|
+| user_depth	| Interaction level of user with the web platform (1 - low, 2 - medium, 3 - High)	|
+| city_development_index	| Scaled development index of the residence city	|
+| var_1	| Anonymised session feature	|
+| is_click	| 0 - no click, 1 - click	|
 
-1. Numbered
-2. List
+#### Historical User Logs
 
-**Bold** and _Italic_ and `Code` text
+| Variable	| Definition	|
+| ------------- |:-------------:|
+| DateTime	| Timestamp	|
+| user_id	| Unique ID for user	|
+| product	| Product ID	|
+| Action	| view/interest (view - viewed the product page, interest - registered interest for the product) |
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/vaima75/AmExpert/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Evaluation Metric
+The evaluation metric for this competition is AUC-ROC score.
